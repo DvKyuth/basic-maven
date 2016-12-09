@@ -84,9 +84,9 @@ mvn archetype:generate -DgroupId=com.rupp.sample -DartifactId=samplewebapp -Darc
             ├── index.jsp
             └── WEB-INF
                 └── web.xml
-
-
+```
 >> cat pom.xml
+```java
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -109,10 +109,14 @@ mvn archetype:generate -DgroupId=com.rupp.sample -DartifactId=samplewebapp -Darc
     <finalName>samplewebapp</finalName>
   </build>
 </project>
-
+```
 
 >> open with Eclipse and import
 >> mvn eclipse:eclipse
+
+//add tomcat7 server plugin in build tag  with pom.xml
+
+```java
 
 <build>
     <finalName>samplewebapp</finalName>
@@ -133,8 +137,11 @@ mvn archetype:generate -DgroupId=com.rupp.sample -DartifactId=samplewebapp -Darc
     </plugin>
  </plugins>
 
+```
 
 The pom.xml looks like :
+
+```java
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -173,6 +180,7 @@ The pom.xml looks like :
    </plugins>
   </build>
 </project>
+```
 
 // run the following mvn
 >> mvn clean install tomcat7:run
