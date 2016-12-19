@@ -189,3 +189,39 @@ open browser : http://localhost:8080/
 ```
 
 
+# Create pom file with properties filtering
+
+see the pom file : properties_pom.xml 
+```java
+<build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+  </build>
+  <properties>
+    <database.driver>com.mysql.jdbc.Driver</database.driver>
+    <database.url>jdbc:mysql://localhost:3306/database?autoReconnect=true</database.url>
+    <database.username>myusername</database.username>
+    <database.password>mypassword</database.password>
+  </properties>
+```
+see file src/main/resources/application.properties
+```java
+driverClassName=${database.driver}
+#url=jdbc:mysql://localhost:3306/scholastic?autoReconnect=true
+url=${database.url}
+username=${database.username}
+password=${database.password}
+```
+Running this maven : mvn -f properties_pom.xml clean install
+cat target/classes/application.properties 
+```java
+driverClassName=com.mysql.jdbc.Driver
+#url=jdbc:mysql://localhost:3306/scholastic?autoReconnect=true
+url=jdbc:mysql://localhost:3306/database?autoReconnect=true
+username=myusername
+password=mypassword
+```java
