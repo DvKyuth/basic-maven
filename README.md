@@ -181,12 +181,9 @@ The pom.xml looks like :
   </build>
 </project>
 ```
-
 //run the following mvn
 >>mvn clean install tomcat7:run
 open browser : http://localhost:8080/
-
-```
 
 # Create pom file with properties filtering
 
