@@ -182,12 +182,11 @@ The pom.xml looks like :
 </project>
 ```
 
-// run the following mvn
->> mvn clean install tomcat7:run
+//run the following mvn
+>>mvn clean install tomcat7:run
 open browser : http://localhost:8080/
 
 ```
-
 
 # Create pom file with properties filtering
 
@@ -224,4 +223,4 @@ driverClassName=com.mysql.jdbc.Driver
 url=jdbc:mysql://localhost:3306/database?autoReconnect=true
 username=myusername
 password=mypassword
-```java
+```
