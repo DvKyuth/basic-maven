@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Collections;
 
 /**
  * @author Sophea <a href='mailto:smak@dminc.com'> sophea </a>
@@ -266,7 +265,7 @@ public class CountriesList {
         return countries;
     }
     
-    public Collection<String> getCountriesByFirstLetter(String firstLetter) {
+    public static Collection<String> getCountriesByFirstLetter(String firstLetter) {
         //implement here
         return java.util.Collections.EMPTY_LIST;
     }
