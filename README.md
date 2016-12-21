@@ -46,22 +46,22 @@ run command :
 
 //build the project
 >>mvn clean package
-```
-see success compile and build the project
 
-here are the steps :
-    validate
-    generate-sources
-    process-sources
-    generate-resources
-    process-resources
-    compile
+see success compile and build the project.
+
+Here are the steps :
+     * validate
+     * generate-sources
+     * process-sources
+     *  generate-resources
+     * process-resources
+     * compile
 
 You may test the newly compiled and packaged JAR with the following command:
 
 >> java -cp target/myFirstMavenApp-1.0-SNAPSHOT.jar com.rupp.app.App 
 Hello World!
-
+```
 
 Import the projects and view in IDE and add more class java-collection or other try it out
 
