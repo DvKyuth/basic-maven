@@ -19,4 +19,54 @@ Under src/main/resources there are three files:
 
 ```
     In the project descriptor, you need to configure the different profiles. Only the test profile is showed here.
+   ```java 
+   <properties>
+    <filename.env.properties>application.properties</filename.env.properties>    
+  </properties>
+  
+   <build>
+     <plugins>
+         <plugin>
+           <artifactId>maven-antrun-plugin</artifactId>
+           <executions>
+             <execution>
+               <phase>test</phase>
+               <goals>
+                 <goal>run</goal>
+               </goals>
+               <configuration>
+                 <tasks>
+                   <delete file="${project.build.outputDirectory}/application.properties"/>
+                   <copy file="src/main/resources/${filename.env.properties}"
+                         tofile="${project.build.outputDirectory}/application.properties"/>
+                 </tasks>
+               </configuration>
+             </execution>
+           </executions>
+         </plugin>
+         </build>
+          
+  <profiles>
+   <profile>
+     <id>test</id>
+     <properties>
+    <filename.env.properties>ENV.TEST.properties</filename.env.properties>    
+  </properties> 
+   </profile>
+  <profile>
+     <id>stage</id>
+    <properties>
+   	 <filename.env.properties>ENV.STAGE.properties</filename.env.properties>    
+     </properties>    
+   </profile>
+   
+  <profile>
+     <id>prod</id>
+    <properties>
+   	 <filename.env.properties>ENV.PROD.properties</filename.env.properties>    
+     </properties>    
+   </profile>
+</profiles>
+
+      ```
 
