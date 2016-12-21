@@ -182,14 +182,23 @@ The pom.xml looks like :
   </build>
 </project>
 ```
-//run the following mvn
->>mvn clean install tomcat7:run
-open browser : http://localhost:8080/
+- //run the following mvn
+- mvn clean install tomcat7:run
+- open browser : http://localhost:8080/
 
 # Create pom file with properties filtering
+see more detail : https://maven.apache.org/plugins/maven-resources-plugin/examples/filter.html
 
 see the pom file : properties_pom.xml 
 ```java
+<!-- properties -->
+<properties>
+    <database.driver>com.mysql.jdbc.Driver</database.driver>
+    <database.url>jdbc:mysql://localhost:3306/database?autoReconnect=true</database.url>
+    <database.username>myusername</database.username>
+    <database.password>mypassword</database.password>
+  </properties>
+  
 <build>
     <resources>
       <resource>
@@ -198,12 +207,7 @@ see the pom file : properties_pom.xml
       </resource>
     </resources>
   </build>
-  <properties>
-    <database.driver>com.mysql.jdbc.Driver</database.driver>
-    <database.url>jdbc:mysql://localhost:3306/database?autoReconnect=true</database.url>
-    <database.username>myusername</database.username>
-    <database.password>mypassword</database.password>
-  </properties>
+  
 ```
 see file src/main/resources/application.properties
 ```java
@@ -214,6 +218,7 @@ username=${database.username}
 password=${database.password}
 ```
 Running this maven : mvn -f properties_pom.xml clean install
+
 cat target/classes/application.properties 
 ```java
 driverClassName=com.mysql.jdbc.Driver
@@ -222,3 +227,6 @@ url=jdbc:mysql://localhost:3306/database?autoReconnect=true
 username=myusername
 password=mypassword
 ```
+
+# Create pom file with different profile TESt | STAGE | Prod
+see more details in this url : https://github.com/sophea/basic-maven/tree/master/mvnProfile
