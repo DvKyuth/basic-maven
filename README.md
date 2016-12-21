@@ -46,7 +46,7 @@ run command :
 
 //build the project
 >>mvn clean package
-
+```
 see success compile and build the project
 
 here are the steps :
@@ -61,7 +61,7 @@ You may test the newly compiled and packaged JAR with the following command:
 
 >> java -cp target/myFirstMavenApp-1.0-SNAPSHOT.jar com.rupp.app.App 
 Hello World!
-```
+
 
 Import the projects and view in IDE and add more class java-collection or other try it out
 
@@ -85,7 +85,8 @@ mvn archetype:generate -DgroupId=com.rupp.sample -DartifactId=samplewebapp -Darc
             └── WEB-INF
                 └── web.xml
 ```
->> cat pom.xml
+- cat pom.xml
+
 ```java
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -111,8 +112,8 @@ mvn archetype:generate -DgroupId=com.rupp.sample -DartifactId=samplewebapp -Darc
 </project>
 ```
 
->> open with Eclipse and import
->> mvn eclipse:eclipse
+- open with Eclipse and import
+- mvn eclipse:eclipse
 
 //add tomcat7 server plugin in build tag  with pom.xml
 
