@@ -70,3 +70,4 @@ Under src/main/resources there are three files:
 
       ```
 
+mvn clean install -Ptest|stage|prod
