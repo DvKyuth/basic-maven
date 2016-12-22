@@ -18,7 +18,7 @@ Under src/main/resources there are three files:
     ENV.prod.properties - This is basically the same as the test variant and will be used in the production environment.
 
 ```
-    In the project descriptor, you need to configure the different profiles. Only the test profile is showed here.
+    In the project descriptor, you need to configure the different profiles.
    ```java 
    <properties>
     <filename.env.properties>application.properties</filename.env.properties>    
