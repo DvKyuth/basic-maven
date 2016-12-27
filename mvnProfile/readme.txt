@@ -1,6 +1,6 @@
 
 
-When we are writing software that is deployed to different environments such as test stage and production, we often have to create different configuration files for each environment. If we are using Maven, we can do this in pomx.ml by using build profiles.
+When we are writing software that is deployed to different environments such as test stage and production, we often have to create different configuration files for each environment. If we are using Maven, we can do this in pom.xml by using build profiles.
 
 
 pom.xml
