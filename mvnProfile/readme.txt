@@ -48,3 +48,12 @@ package war type with production server
 
 // check application.properties
 cat target/classes/application.properties
+
+
+// run web jetty with test profile:
+>> mvn clean jetty:run -Ptest
+http://localhost:8080/properites
+
+//jetty with production
+>>mvn clean jetty:run -Pproduction
+http://localhost:8080/properties 
