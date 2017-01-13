@@ -165,7 +165,11 @@ The pom.xml looks like :
    <plugins>
    <plugin>
 	<artifactId>maven-compiler-plugin</artifactId>
-         <version>2.3.2</version>
+         <version>2.3.2</version> 
+	 <configuration>
+                <source>1.7</source>
+                <target>1.7</target>
+            </configuration>
    </plugin>
    <!-- tomcat7 server-->
    <plugin>
