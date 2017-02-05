@@ -1,6 +1,6 @@
 
 
-When we are writing software that is deployed to different environments such as test stage and production, we often have to create different configuration files for each environment. If we are using Maven, we can do this in pomx.ml by using build profiles.
+When we are writing software that is deployed to different environments such as test stage and production, we often have to create different configuration files for each environment. If we are using Maven, we can do this in pom.xml by using build profiles.
 
 
 pom.xml
@@ -48,3 +48,12 @@ package war type with production server
 
 // check application.properties
 cat target/classes/application.properties
+
+
+// run web jetty with test profile:
+>> mvn clean jetty:run -Ptest
+http://localhost:8080/properites
+
+//jetty with production
+>>mvn clean jetty:run -Pproduction
+http://localhost:8080/properties 

@@ -19,8 +19,13 @@
     <finalName>simple-webapp</finalName>
   <plugins>
    <plugin>
+     <!-- java compile 1.7 -->
     <artifactId>maven-compiler-plugin</artifactId>
-         <version>2.3.2</version>
+         <version>2.3.2</version> 
+            <configuration>
+                <source>1.7</source>
+                <target>1.7</target>
+            </configuration>
    </plugin>
    <!-- tomcat7 server-->
    <plugin>

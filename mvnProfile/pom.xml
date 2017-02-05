@@ -7,6 +7,12 @@
   <version>1.0-SNAPSHOT</version>
   <name>mvnProfile Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  <properties>
+    <database.driver>com.mysql.jdbc.Driver</database.driver>
+    <database.url>jdbc:mysql://localhost:3306/database?autoReconnect=true</database.url>
+    <database.username>local-myusername</database.username>
+    <database.password>local-mypassword</database.password>
+  </properties>
   
   <build>
     <finalName>mvnProfile</finalName>
@@ -16,13 +22,36 @@
         <filtering>true</filtering>
       </resource>
     </resources>
+    <plugins>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>2.3.2</version>
+        </plugin>
+       <!-- tomcat7 server-->
+       <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+    <!--    <tomcatLoggingFile>tomcat_server.log</tomcatLoggingFile>-->
+         <path>/</path>
+        </configuration>
+        </plugin>
+        <!-- jetty-->
+       <plugin>
+              <groupId>org.eclipse.jetty</groupId>
+                  <artifactId>jetty-maven-plugin</artifactId>
+                  <version>9.2.19.v20160908</version>
+                  <configuration>
+                  <scanIntervalSeconds>3</scanIntervalSeconds>
+                  <webApp>
+                    <contextPath>/</contextPath>
+                  </webApp>
+                  </configuration>
+      </plugin>
+    </plugins>
   </build>
-  <properties>
-    <database.driver>com.mysql.jdbc.Driver</database.driver>
-    <database.url>jdbc:mysql://localhost:3306/database?autoReconnect=true</database.url>
-    <database.username>myusername</database.username>
-    <database.password>mypassword</database.password>
-  </properties>
+  
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -30,6 +59,20 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-io -->
+	<dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-io</artifactId>
+		<version>1.3.2</version>
+	</dependency>
+        
   </dependencies>
   <profiles>
     <profile>
